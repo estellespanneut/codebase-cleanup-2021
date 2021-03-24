@@ -4,7 +4,7 @@ from pandas import read_csv
 
 #FORMAT_USD FUNCTION
 
-def format_usd(my_price): 
+def format_usd(my_price):  
     """
     Converts a numeric value to usd-formatted string, for printing and display purposes.
 
