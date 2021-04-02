@@ -1,7 +1,8 @@
 
 import os
+from dotenv import load_env
+
 import json
-from dotenv import load_dotenv
 import requests
 from pandas import DataFrame
 import plotly.express as px
