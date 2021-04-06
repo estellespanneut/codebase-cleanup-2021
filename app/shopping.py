@@ -3,7 +3,6 @@ from datetime import datetime
 from pandas import read_csv
 
 #FORMAT_USD FUNCTION
-
 def format_usd(my_price):  
     """
     Converts a numeric value to usd-formatted string, for printing and display purposes.
@@ -43,8 +42,6 @@ if __name__ == "__main__":
 
     # CAPTURE PRODUCT SELECTIONS
 
-
-
     selected_products = []
     while True:
         selected_id = input("Please select a product identifier: ")
@@ -54,7 +51,6 @@ if __name__ == "__main__":
             matching_product = find_product(selected_id, products)
             if matching_product:
                 selected_products.append(matching_product)
-                #selected_products.append(matching_products[0])
             else:
                 print("OOPS, Couldn't find that product. Please try again.")
 
@@ -72,7 +68,6 @@ if __name__ == "__main__":
     print("---------")
     for p in selected_products:
         print("SELECTED PRODUCT: " + p["name"] + "   " + format_usd(p["price"]))
-        #print("SELECTED PRODUCT: " + p["name"] + "   " + '${:.2f}'.format(p["price"]))
 
     print("---------")
     print("SUBTOTAL:", format_usd(subtotal))
@@ -91,15 +86,11 @@ if __name__ == "__main__":
         receipt_file.write("------------------------------------------")
         for p in selected_products:
             receipt_file.write("\nSELECTED PRODUCT: " + p["name"] + "   " + format_usd(p["price"]))
-            #receipt_file.write("\nSELECTED PRODUCT: " + p["name"] + "   " + '${:.0f}'.format(p["price"]))
 
         receipt_file.write("\n---------")
         receipt_file.write(f"\nSUBTOTAL: {format_usd(subtotal)}")
-        #receipt_file.write(f"\nSUBTOTAL: {subtotal}")
         receipt_file.write(f"\nTAX: {format_usd(tax)}")
-        #receipt_file.write(f"\nTAX: {subtotal * 0.875}")
         receipt_file.write(f"\nTOTAL: {format_usd(total)}")
-        #receipt_file.write(f"\nTOTAL: {((subtotal * 0.875) + subtotal)}")
         receipt_file.write("\n---------")
         receipt_file.write("\nTHANK YOU! PLEASE COME AGAIN SOON!")
         receipt_file.write("\n---------")

@@ -81,4 +81,4 @@ if __name__ == "__main__":
             elif c == "scissors":
                 print("It's a tie!")
 
-    #determine_winner(u)
+    #ATTRIBUTION: Lots of help and text was taken from class lectures
