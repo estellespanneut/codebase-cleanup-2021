@@ -58,27 +58,5 @@ if __name__ == "__main__":
     elif winner == None:
         print("TIE")
 
-    def determine_winner1(u):
-        if u == "rock":
-            if c == "rock":
-                print("It's a tie!")
-            elif c == "paper":
-                print("The computer wins")
-            elif c == "scissors":
-                print("The user wins")
-        elif u == "paper":
-            if c == "rock":
-                print("The user wins")
-            elif c == "paper":
-                print("It's a tie!")
-            elif c == "scissors":
-                print("The computer wins")
-        elif u == "scissors":
-            if c == "rock":
-                print("The computer wins")
-            elif c == "paper":
-                print("The user wins")
-            elif c == "scissors":
-                print("It's a tie!")
 
     #ATTRIBUTION: Lots of help and text was taken from class lectures
