@@ -17,6 +17,16 @@ def format_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
 #ATTRIBUTION: Taken from code provided by Professor Rossetti
 
+def find_product(selected_id, products):
+    matching_products = (p for p in products if str(p["id"]) == str(selected_id))
+    matching_products = list(matching_products)
+    if any(matching_products):
+        return matching_products[0]
+    else:
+        return None
+#ATTRIBUTION: DONE TOGETHER IN CLASS
+
+
 #PREVENT APPLICATION CODE FROM IMPORTING
 
 if __name__ == "__main__":
@@ -33,15 +43,18 @@ if __name__ == "__main__":
 
     # CAPTURE PRODUCT SELECTIONS
 
+
+
     selected_products = []
     while True:
         selected_id = input("Please select a product identifier: ")
         if selected_id.upper() == "DONE":
             break
         else:
-            matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-            if any(matching_products):
-                selected_products.append(matching_products[0])
+            matching_product = find_product(selected_id, products)
+            if matching_product:
+                selected_products.append(matching_product)
+                #selected_products.append(matching_products[0])
             else:
                 print("OOPS, Couldn't find that product. Please try again.")
 
